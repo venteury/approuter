@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <>
-          <div className="flex justify-between bg-black text-white px-5 py-5">
+          <div className="flex justify-between bg-black text-white px-5 py-5 sticky top-0 z-50">
             <div className="flex gap-x-2">
               <div>Sidebar</div>
               <h1>Logo</h1>
@@ -26,9 +26,8 @@ export default function RootLayout({ children }) {
               </ul>
             </div>
           </div>
-
-          <div className="flex">
-            <div className=" bg-black text-white h-screen w-[15vw] ">
+          <div className="flex overflow-hidden h-[100vh]">
+            <div className=" bg-black text-white h-[100vh] w-[15vw] overscroll-none overflow-hidden">
               <ul className="flex flex-col  py-5 w-full  items-center gap-y-3">
                 <Link
                   href="/"
