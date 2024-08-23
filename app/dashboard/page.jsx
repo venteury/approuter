@@ -31,7 +31,7 @@ const Dashboard = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center w-[150vh] h-screen text-green-500">Loading...</div>;
   }
 
   if (isError) {

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
+
 import QueryProvider from "./providers/QueryProvider";
 
 export const metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
           <>
             <div className="flex justify-between bg-black text-white px-5 py-5 sticky top-0 z-50">
               <div className="flex gap-x-2">
-                <div>Sidebar</div>
+                <h1>SideBar</h1>
                 <h1>Logo</h1>
               </div>
               <div>
