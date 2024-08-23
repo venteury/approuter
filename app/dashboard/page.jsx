@@ -55,7 +55,14 @@ const Dashboard = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center w-[150vh] h-screen text-green-500">
-        Loading...
+        <div className="modal fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-[99]">
+          <div>
+            <div className="relative flex justify-center items-center ">
+              <div className="absolute animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-purple-500"></div>
+            </div>
+            <div className="text-center  text-white text-sm mb-4">Loading...</div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -66,6 +73,20 @@ const Dashboard = () => {
 
   return (
     <div className="px-5">
+      {isFetchingNextPage && (
+        <div className="modal fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-[99]">
+          <div>
+            <div className="relative flex justify-center items-center mb-2">
+              <div className="absolute animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-purple-500"></div>
+              <img
+                src="https://www.svgrepo.com/show/509001/avatar-thinking-9.svg"
+                className="rounded-full h-28 w-28"
+              ></img>
+            </div>
+            <div className="text-center py-2 text-white">Loading more...</div>
+          </div>
+        </div>
+      )}
       <div
         className="grid grid-cols-3 gap-4 overflow-auto h-[90vh] mt-10"
         ref={containerRef}
@@ -74,9 +95,10 @@ const Dashboard = () => {
           page.map((item) => <Card key={item.id} product={item} />)
         )}
       </div>
-      <div className="flex justify-center text-blue-500 ">
+
+      {/* <div className="flex justify-center text-blue-500 text-lg ">
         {isFetchingNextPage && <div>Loading more...</div>}
-        {/* {hasNextPage && !isFetchingNextPage && (
+        {hasNextPage && !isFetchingNextPage && (
           <button
             onClick={() => fetchNextPage()}
             disabled={isFetchingNextPage}
@@ -84,8 +106,8 @@ const Dashboard = () => {
           >
             Load More
           </button>
-        )} */}
-      </div>
+        )}
+      </div> */}
     </div>
   );
 };
