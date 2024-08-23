@@ -6,7 +6,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 const Dashboard = () => {
   const fetchPosts = async ({ pageParam = 1 }) => {
     const res = await fetch(
-      `https://api.escuelajs.co/api/v1/products?offset=${pageParam}&limit=10`
+      `https://api.escuelajs.co/api/v1/products?offset=${pageParam}&limit=9`
     );
     return res.json();
   };
@@ -23,7 +23,7 @@ const Dashboard = () => {
     queryKey: ["data"],
     queryFn: fetchPosts,
     getNextPageParam: (lastPage, pages) => {
-      if (lastPage.length < 10) {
+      if (lastPage.length < 9) {
         return undefined;
       }
       return pages.length + 10;
@@ -50,8 +50,8 @@ const Dashboard = () => {
       <div className="flex justify-center text-blue-500 ">
         {isFetchingNextPage && <div>Loading more...</div>}
         {hasNextPage && !isFetchingNextPage && (
-          <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
-            Load More...
+          <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage} className="text-blue-500 border-blue-500 border mt-2 px-3 rounded-2xl">
+            Load More
           </button>
         )}
       </div>

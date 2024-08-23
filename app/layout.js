@@ -23,8 +23,6 @@ export default function RootLayout({ children }) {
               <div>
                 <ul className=" flex gap-x-2">
                   <li>Home</li>
-                  {/* <li>About</li>
-              <li>Contact</li> */}
                 </ul>
               </div>
             </div>
@@ -51,6 +49,7 @@ export default function RootLayout({ children }) {
                   </Link>
                 </ul>
               </div>
+
               <div className="px-2">{children}</div>
             </div>
           </>
