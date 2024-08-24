@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { addUser } from "../slices/userSlice";
+import { useDispatch } from "react-redux";
 
 const About = () => {
-
-
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,9 +21,21 @@ const About = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+      return alert("Please fill in all fields");
+    }
+    let obj = {
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone: formData.phone,
+    };
+
+    dispatch(addUser(obj));
+
     console.log("Form Data Submitted: ", formData);
   };
-  
+
   return (
     <div className="">
       <div className="w-[80vw]  mx-auto p-6 bg-gray-100 shadow-md rounded-lg">

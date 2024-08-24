@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default function Home() {
   const users = useSelector((state) => state.user.users) || [];
-
   const dispatch = useDispatch();
 
   return (
