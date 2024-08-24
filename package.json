@@ -11,6 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
     "@tanstack/react-query": "^5.52.1",
+    "nanoid": "^5.0.7",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",

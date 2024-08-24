@@ -18,7 +18,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <table className="w-[80vw] bg-white shadow-md rounded-lg overflow-hidden">
+      <table className="w-[80vw]  bg-white shadow-md rounded-lg overflow-auto ">
         <thead>
           <tr className="bg-blue-500 text-white text-left">
             <th className="px-6 py-3 text-sm font-semibold">Name</th>
@@ -29,14 +29,14 @@ export default function Home() {
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="">
           {users &&
             users.map((user, index) => (
               <tr
                 key={user.id}
                 className={`${
                   index % 2 === 0 ? "bg-gray-100" : "bg-white"
-                } hover:bg-blue-100 transition duration-150`}
+                } hover:bg-blue-100 transition duration-150 ]`}
               >
                 <td className="border-t px-6 py-4 text-gray-700">
                   {user.name}

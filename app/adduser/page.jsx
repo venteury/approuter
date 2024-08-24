@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { addUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
+import { nanoid } from "nanoid";
+import { redirect } from "next/navigation";
 
 const About = () => {
   const dispatch = useDispatch();
@@ -29,9 +31,11 @@ const About = () => {
       name: `${formData.firstName} ${formData.lastName}`,
       email: formData.email,
       phone: formData.phone,
+      id: nanoid(),
     };
-
     dispatch(addUser(obj));
+    // router.push("/");
+    redirect("/");
 
     console.log("Form Data Submitted: ", formData);
   };
