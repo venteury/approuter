@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 
 const About = () => {
+
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,6 +22,7 @@ const About = () => {
     e.preventDefault();
     console.log("Form Data Submitted: ", formData);
   };
+  
   return (
     <div className="">
       <div className="w-[80vw]  mx-auto p-6 bg-gray-100 shadow-md rounded-lg">
