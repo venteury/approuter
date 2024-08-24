@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
                   </ul>
                 </div>
 
-                <div className=" flex justify-center w-full items-center">
+                <div className=" flex justify-center w-full py-10">
                   {children}
                 </div>
               </div>

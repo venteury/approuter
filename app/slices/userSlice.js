@@ -2,7 +2,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  users: [],
+  users: [
+    {
+      name: "A",
+      email: "a@example.com",
+      id: 1,
+    },
+    {
+      name: "B",
+      email: "b@example.com",
+      id: 2,
+    },
+    {
+      name: "C",
+      email: "c@example.com",
+      id: 3,
+    },
+  ],
 };
 
 const userSlice = createSlice({
