@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
                       Dashboard
                     </Link>
                     <Link
-                      href="/about"
+                      href="/adduser"
                       className="py-2 border-white border rounded-2xl flex justify-center w-[12vw]"
                     >
                       About

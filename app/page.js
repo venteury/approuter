@@ -9,12 +9,21 @@ export default function Home() {
 
   return (
     <main className="">
+      <div className="flex justify-end mb-3">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded"
+          onClick={() => dispatch(deleteUser(1))}
+        >
+          + New User
+        </button>
+      </div>
+
       <table className="w-[80vw] bg-white shadow-md rounded-lg overflow-hidden">
         <thead>
           <tr className="bg-blue-500 text-white text-left">
-            <th className="px-6 py-3 text-sm font-semibold flex ">Name</th>
+            <th className="px-6 py-3 text-sm font-semibold">Name</th>
 
-            <th className="px-6 py-3 text-sm font-semibold  ">Email</th>
+            <th className="px-6 py-3 text-sm font-semibold">Email</th>
             <th className="px-6 py-3 text-sm font-semibold  text-center">
               Action
             </th>
