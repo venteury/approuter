@@ -1,8 +1,11 @@
 "use client";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteUser } from "./slices/userSlice";
 
 export default function Home() {
   const users = useSelector((state) => state.user.users) || [];
+
+  const dispatch = useDispatch();
 
   return (
     <main className="">
@@ -12,7 +15,9 @@ export default function Home() {
             <th className="px-6 py-3 text-sm font-semibold flex ">Name</th>
 
             <th className="px-6 py-3 text-sm font-semibold  ">Email</th>
-            <th className="px-6 py-3 text-sm font-semibold  text-center">Action</th>
+            <th className="px-6 py-3 text-sm font-semibold  text-center">
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -35,7 +40,11 @@ export default function Home() {
                     <button className="bg-blue-500 hover:bg-blue-700 text-white  py-1 px-6 rounded">
                       Edit
                     </button>
-                    <button className="bg-red-500 hover:bg-red-700 text-white  py-1 px-4 rounded">
+                    <button
+                      className="bg-red-500 hover:bg-red-700 text-white  py-1 px-4 rounded"
+                      type="button"
+                      onClick={() => dispatch(deleteUser(user.id))}
+                    >
                       Delete
                     </button>
                   </div>
