@@ -13,9 +13,9 @@ const Card = ({ product }) => {
             {product.title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {product.description}
-        </p>
+        </div>
       </div>
     </div>
   );
