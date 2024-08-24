@@ -1,6 +1,7 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteUser } from "./slices/userSlice";
+import Link from "next/link";
 
 export default function Home() {
   const users = useSelector((state) => state.user.users) || [];
@@ -10,12 +11,12 @@ export default function Home() {
   return (
     <main className="">
       <div className="flex justify-end mb-3">
-        <button
+        <Link
           className="bg-blue-500 hover:bg-blue-700 text-white  py-2 px-4 rounded"
-          onClick={() => dispatch(deleteUser(1))}
+          href="/adduser"
         >
           + New User
-        </button>
+        </Link>
       </div>
 
       <table className="w-[80vw] bg-white shadow-md rounded-lg overflow-hidden">
