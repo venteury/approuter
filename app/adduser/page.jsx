@@ -23,8 +23,8 @@ const About = () => {
   };
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
-
     if (!formData.firstName || !formData.lastName || !formData.email) {
       return alert("Please fill in all fields");
     }
@@ -36,7 +36,6 @@ const About = () => {
     };
     dispatch(addUser(obj));
     router.push("/");
-
     console.log("Form Data Submitted: ", formData);
   };
 
