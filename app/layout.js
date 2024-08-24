@@ -1,10 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { Provider } from "react-redux";
-import { store } from "../store";
+// import { Provider } from "react-redux";
+import StoreProvider from "./providers/StoreProvider";
+// import { store } from "./store/store";
 const inter = Inter({ subsets: ["latin"] });
-
 import QueryProvider from "./providers/QueryProvider";
 
 export const metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <QueryProvider>
-          <Provider store={store}>
+          <StoreProvider>
             <>
               <div className="flex justify-between bg-black text-white px-5 py-5 sticky top-0 z-50">
                 <div className="flex gap-x-2">
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
             </>
-          </Provider>
+          </StoreProvider>
         </QueryProvider>
       </body>
     </html>
