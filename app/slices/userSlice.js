@@ -1,25 +1,40 @@
 "use client";
-
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  users: [],
+};
+
 const userSlice = createSlice({
-  name: "user",
-  initialState: {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-  },
+  name: "users",
+  initialState,
   reducers: {
-    setUserInfo(state, action) {
-      const { firstName, lastName, email, phone } = action.payload;
-      state.firstName = firstName;
-      state.lastName = lastName;
-      state.email = email;
-      state.phone = phone;
+    addUser: (state, action) => {
+      state.users.push(action.payload);
+    },
+
+    updateUser: (state, action) => {
+      const { id, data } = action.payload;
+      const existingUser = state.users.find((user) => user.id === id);
+      if (existingUser) {
+        Object.assign(existingUser, data);
+      }
+    },
+
+    deleteUser: (state, action) => {
+      const id = action.payload;
+      state.users = state.users.filter((user) => user.id !== id);
     },
   },
 });
 
-export const { setUserInfo } = userSlice.actions;
+export const {
+  addUser,
+  setUsers,
+  updateUser,
+  deleteUser,
+  setLoading,
+  setError,
+} = userSlice.actions;
+
 export default userSlice.reducer;
