@@ -1,9 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-// import { Provider } from "react-redux";
 import StoreProvider from "./providers/StoreProvider";
-// import { store } from "./store/store";
 const inter = Inter({ subsets: ["latin"] });
 import QueryProvider from "./providers/QueryProvider";
 

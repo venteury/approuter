@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { addUser } from "../slices/userSlice";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     firstName: "",
@@ -34,8 +35,7 @@ const About = () => {
       id: nanoid(),
     };
     dispatch(addUser(obj));
-    // router.push("/");
-    redirect("/");
+    router.push("/");
 
     console.log("Form Data Submitted: ", formData);
   };
