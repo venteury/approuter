@@ -21,6 +21,7 @@ export default function Home() {
       <table className="w-[80vw]  bg-white shadow-md rounded-lg overflow-auto ">
         <thead>
           <tr className="bg-blue-500 text-white text-left">
+            <th className="px-6 py-3 text-sm font-semibold">S.No.</th>
             <th className="px-6 py-3 text-sm font-semibold">Name</th>
 
             <th className="px-6 py-3 text-sm font-semibold">Email</th>
@@ -39,6 +40,9 @@ export default function Home() {
                 } hover:bg-blue-100 transition duration-150 ]`}
               >
                 <td className="border-t px-6 py-4 text-gray-700">
+                  {index + 1}
+                </td>
+                <td className="border-t px-6 py-4 text-gray-700">
                   {user.name}
                 </td>
                 <td className="border-t px-6 py-4 text-gray-700">
@@ -46,9 +50,9 @@ export default function Home() {
                 </td>
                 <td className="border-t px-6 py-4 text-gray-700">
                   <div className="flex gap-x-2 justify-evenly">
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white  py-1 px-6 rounded">
+                    {/* <button className="bg-blue-500 hover:bg-blue-700 text-white  py-1 px-6 rounded">
                       Edit
-                    </button>
+                    </button> */}
                     <button
                       className="bg-red-500 hover:bg-red-700 text-white  py-1 px-4 rounded"
                       type="button"
