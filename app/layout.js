@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
                 </ul>
               </div>
             </div>
-            <div className="flex overflow-hidden h-[100vh]">
+            <div className="flex overflow-hidden h-[100vh] ">
               <div className=" bg-black text-white h-[100vh] w-[15vw] overscroll-none overflow-hidden">
                 <ul className="flex flex-col  py-5 w-full  items-center gap-y-3">
                   <Link
@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
                 </ul>
               </div>
 
-              <div className="px-2">{children}</div>
+              <div className=" flex justify-center w-full items-center">{children}</div>
             </div>
           </>
         </QueryProvider>
