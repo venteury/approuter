@@ -50,9 +50,11 @@ export default function Home() {
                 </td>
                 <td className="border-t px-6 py-4 text-gray-700">
                   <div className="flex gap-x-2 justify-evenly">
-                    {/* <button className="bg-blue-500 hover:bg-blue-700 text-white  py-1 px-6 rounded">
-                      Edit
-                    </button> */}
+                    <Link href={`/edituser/${user.id}`}>
+                      <button className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-6 rounded">
+                        Edit
+                      </button>
+                    </Link>
                     <button
                       className="bg-red-500 hover:bg-red-700 text-white  py-1 px-4 rounded"
                       type="button"
